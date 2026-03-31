@@ -25,7 +25,10 @@ test.only("login functionality", async({page})=>
         }
     }
 
-await page.pause();
-
+//await page.pause();
+//Lec 29 starts 
+await page.locator("[routerlink*='cart']").click();
+const bool = await page.locator("h3:has-text('ZARA COAT 3')").isVisible();
+expect(bool).toBeTruthy();
 
 })
